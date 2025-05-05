@@ -1,0 +1,35 @@
+Project Description
+This project requires students to implement a concurrent (multi-threaded) server for use in a client-server configuration to examine, analyze, and study the effects a concurrent server has on the efficiency (average turn-around time) of processing client requests.
+
+Instructions
+  Students may refer to this Java ServerSocket TutorialLinks to an external site. and Running System Commands TutorialLinks to an external site. to help them create the server and client programs. Students must demonstrate their client and server programs, as well as collect data, using the provided Course Servers. Students should refer to the Accessing the Course Servers page for instructions on connecting to and using the two (2) Course Servers.
+    •	Create two (2) programs: 1) a concurrent (multi-threaded) server that accepts requests from clients, and 2) a multi-threaded client capable of spawning numerous client sessions that connect to the server
+      o	The server and client programs must connect to the same network address and port
+    •	The concurrent (multi-threaded) server should spawn a new server instance for each client request (in parallel)
+    •	The concurrent (multi-threaded) server must support the following client requests:
+      o	Date and Time - the date and time on the server
+      o	Uptime - how long the server has been running since last boot-up
+      o	Memory Use - the current memory usage on the server
+      o	Netstat - lists network connections on the server
+      o	Current Users - list of users currently connected to the server
+      o	Running Processes - list of programs currently running on the server
+    •	Create a multi-threaded client that transmits requests to the server on a specified network port
+      o	The client program must be able to spawn multiple client sessions
+    •	When the server program is launched, the server should
+      o	Listen for client requests on the specified network address and port
+      o	When a client request is received, the server should
+        	Spawn a new server instance to handle the request
+        	Determine which operation is being requested
+        	Perform the requested operation and collect the resulting output
+        	Reply to the client request with the output from the operation performed
+        	Destroy the server instance
+      o	Perform any necessary clean up activities
+    •	When the client program is launched, the client should
+      o	Request the network address and port to which to connect
+      o	Request the operation to request (refer to the list above)
+      o	Request how many client requests to generate (1, 5, 10, 15, 20, 25 and 100)
+      o	Collect the following data
+        	Turn-around Time (elapsed time) for each client request
+        	The time required for the client request to travel to the server, be processed by the server, and return to the client
+        	Total Turn-around Time (sum of the turn-around times for all the client requests)
+        	Average Turn-around Time (Total Turn-around Time divided by the number client requests)
